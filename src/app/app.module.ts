@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './modules/core/core.module';
 import { HomeModule } from './modules/home/home.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],

@@ -1,16 +1,22 @@
 header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
 
   div {
     display: flex;
+    align-items: center;
+  }
+  div:first-of-type {
     column-gap: 1rem;
+  }
+  app-search-bar {
+    margin-right: 60px;
   }
   .logo {
     width: 60px;
   }
-
   .login {
     width: 40px;
   }
