@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  border-radius: 3rem;
+
+  .card_img_cont {
+    height: 200px;
+    width: 100%;
+    background-image: url("/assets/images/header/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card_text {
+    font-size: 14px;
+
+    span {
+      padding-right: 1em;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin-top: 0;
+    list-style-type: none;
+    display: inline-flex;
+    flex-wrap: wrap;
+    row-gap: 0.5em;
+    column-gap: 0.5em;
+  }
+
+  li {
+    background-color: #dae952;
+    border-radius: 1em;
+    padding: 0.2em 0.8em;
+  }
+}

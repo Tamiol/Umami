@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="img-container"></div>
+  <div class="card_text">
+    <p>{{ recipe.name }}</p>
+    <span>{{ recipe.readyInMinutes }}</span>
+    <ul>
+      <li *ngIf="!recipe.glutenFree">Gluten-free</li>
+      <li *ngIf="!recipe.vegan">Vegan</li>
+      <li *ngIf="!recipe.vegetarian">Vegetarian</li>
+    </ul>
+  </div>
+</div>
