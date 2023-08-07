@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RecipesComponent } from './recipes.component';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 const routes: Routes = [
   {
     path: 'recipes',
     component: RecipesComponent,
-    pathMatch: 'full',
+  },
+  {
+    path: 'recipe/:id',
+    component: RecipeDetailsComponent,
   },
 ];
 

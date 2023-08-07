@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Recipe } from '../../shared/interfaces/recipes-interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipes-list',
@@ -8,4 +9,10 @@ import { Recipe } from '../../shared/interfaces/recipes-interface';
 })
 export class RecipesListComponent {
   @Input() recipe!: Recipe;
+
+  constructor(private router: Router) {}
+
+  navigateToDetails() {
+    this.router.navigate(['/recipe', this.recipe.id]);
+  }
 }

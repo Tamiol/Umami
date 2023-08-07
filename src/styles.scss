@@ -13,3 +13,14 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none;
 }
+
+app-root {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  padding-inline: 10%;
+}
