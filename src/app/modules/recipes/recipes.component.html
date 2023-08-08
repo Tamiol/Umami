@@ -1,7 +1,7 @@
 <section class="search_recipes"></section>
 <section class="recipes_list container">
-  <app-recipes-list
-    *ngFor="let recipe of recipes"
+  <app-recipe-card
+    *ngFor="let recipe of recipes; trackBy: tracker"
     [recipe]="recipe"
-  ></app-recipes-list>
+  ></app-recipe-card>
 </section>

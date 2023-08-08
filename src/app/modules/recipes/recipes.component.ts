@@ -11,6 +11,9 @@ export class RecipesComponent implements OnInit {
   constructor(private apiService: RecipesApiService) {}
 
   recipes: Recipe[] = [];
+  tracker(index: number, recipe: Recipe) {
+    return recipe.id;
+  }
 
   ngOnInit(): void {
     this.apiService.getRecipes().subscribe({

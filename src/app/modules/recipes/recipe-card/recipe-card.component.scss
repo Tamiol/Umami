@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 265px;
   border: #dae952 1px solid;
   border-radius: 20px;
 
@@ -9,10 +9,9 @@
     cursor: pointer;
   }
 
-  .card_img_cont {
+  .img-container {
     height: 200px;
     width: 100%;
-    background-image: url("/assets/images/header/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

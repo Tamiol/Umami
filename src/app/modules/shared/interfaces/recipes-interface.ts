@@ -10,4 +10,5 @@ export interface Recipe {
   vegetarian: boolean;
   vegan: boolean;
   glutenFree: boolean;
+  imageUrl: string;
 }
