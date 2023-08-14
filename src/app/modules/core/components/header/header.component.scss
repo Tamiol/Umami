@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
 
   div {
     display: flex;
@@ -14,8 +14,13 @@ header {
   app-search-bar {
     margin-right: 60px;
   }
+  a {
+    text-decoration: none;
+  }
   .logo {
-    width: 45px;
+    img {
+      width: 200px;
+    }
   }
   .login {
     width: 35px;

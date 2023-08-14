@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, WelcomePageComponent],
   imports: [CommonModule, HomeRoutingModule],
   exports: [HomeComponent],
 })
