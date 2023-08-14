@@ -11,13 +11,16 @@ export class RecipesComponent implements OnInit {
   constructor(private apiService: RecipesApiService) {}
 
   recipes: Recipe[] = [];
-  tracker(index: number, recipe: Recipe) {
-    return recipe.id;
-  }
 
   ngOnInit(): void {
     this.apiService.getRecipes().subscribe({
-      next: (recipe) => (this.recipes = recipe),
+      next: (recipes) => (this.recipes = recipes),
+    });
+  }
+
+  searchRecipe(recipeName: string) {
+    this.apiService.getRecipeByName(recipeName).subscribe({
+      next: (recipes) => (this.recipes = recipes),
     });
   }
 }

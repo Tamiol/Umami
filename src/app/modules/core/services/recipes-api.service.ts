@@ -19,4 +19,10 @@ export class RecipesApiService {
   getRecipe(index: number): Observable<Recipe> {
     return this.http.get<Recipe>(`${this.apiServerUrl}/catalog/${index}`);
   }
+
+  getRecipeByName(recipeName: string): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(
+      `${this.apiServerUrl}/catalog?name=${recipeName}`
+    );
+  }
 }

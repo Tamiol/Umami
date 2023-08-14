@@ -1,12 +1,12 @@
-<div class="card" (click)="navigateToDetails()">
+<li class="card" (click)="navigateToDetails()">
   <div #imgContainer class="img-container"></div>
   <div class="card_text">
     <p>{{ recipe.name }}</p>
     <span>{{ recipe.readyInMinutes }}</span>
-    <ul>
-      <li *ngIf="!recipe.glutenFree">Gluten-free</li>
-      <li *ngIf="!recipe.vegan">Vegan</li>
+    <ul *ngIf="!recipe.glutenFree || !recipe.vegan || !recipe.vegetarian">
       <li *ngIf="!recipe.vegetarian">Vegetarian</li>
+      <li *ngIf="!recipe.vegan">Vegan</li>
+      <li *ngIf="!recipe.glutenFree">Gluten-free</li>
     </ul>
   </div>
-</div>
+</li>

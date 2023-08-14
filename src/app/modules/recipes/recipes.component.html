@@ -1,7 +1,14 @@
-<section class="search_recipes"></section>
-<section class="recipes_list container">
-  <app-recipe-card
-    *ngFor="let recipe of recipes; trackBy: tracker"
-    [recipe]="recipe"
-  ></app-recipe-card>
+<section class="search_recipes container">
+  <app-search-bar (searchRecipe)="searchRecipe($event)"></app-search-bar>
+  <button>Add</button>
+</section>
+<section class="container">
+  <ul class="recipes_list" *ngIf="recipes.length > 0; else noRecipe">
+    <ng-container *ngFor="let recipe of recipes">
+      <app-recipe-card [recipe]="recipe"></app-recipe-card>
+    </ng-container>
+  </ul>
+  <ng-template #noRecipe>
+    <p>No recipes matching this criteria were found</p>
+  </ng-template>
 </section>
