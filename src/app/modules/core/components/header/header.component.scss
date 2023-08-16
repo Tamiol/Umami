@@ -1,8 +1,13 @@
 header {
   display: flex;
+  position: fixed;
+  z-index: 3;
+  max-width: calc(1440px - 6rem);
+  width: calc(100% - 6rem);
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
+  transition: 0.6s;
 
   div {
     display: flex;
@@ -18,9 +23,25 @@ header {
     text-decoration: none;
   }
   .logo {
+    // display: flex;
+    // justify-content: center;
+    // position: relative;
+    // padding: 20px 40px 0;
+
     img {
       width: 200px;
+      // position: absolute;
+      // top: 0;
+      // z-index: 0;
     }
+    // h1 {
+    //   position: relative;
+    //   font-size: 90px;
+    //   z-index: 1;
+    //   color: #ffd8d8;
+    //   text-shadow: 3px -3px 0px #000, -3px 3px 0px #000, -3px -3px 0px #000,
+    //     3px 3px 0px #000;
+    // }
   }
   .login {
     width: 35px;
