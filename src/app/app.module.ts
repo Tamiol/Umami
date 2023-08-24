@@ -7,6 +7,8 @@ import { CoreModule } from './modules/core/core.module';
 import { HomeModule } from './modules/home/home.module';
 import { RecipesModule } from './modules/recipes/recipes.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from './modules/auth/auth.module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,9 +16,11 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     CoreModule,
     HomeModule,
+    AuthModule,
     RecipesModule,
     AppRoutingModule,
     HttpClientModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],

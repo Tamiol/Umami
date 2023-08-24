@@ -1,0 +1,38 @@
+<section>
+  <form [formGroup]="registerForm">
+    <div>
+      <input [formControl]="controls.login" placeholder="Login" />
+    </div>
+    <span *ngIf="controls.login.invalid && controls.login.touched">{{
+      getErrorMessage(controls.login)
+    }}</span>
+    <div>
+      <input [formControl]="controls.email" placeholder="Login" />
+    </div>
+    <span *ngIf="controls.email.invalid && controls.email.touched">{{
+      getErrorMessage(controls.email)
+    }}</span>
+    <div>
+      <input
+        type="password"
+        [formControl]="controls.password"
+        placeholder="Password"
+      />
+    </div>
+    <span *ngIf="controls.password.invalid && controls.password.touched">{{
+      getErrorMessage(controls.password)
+    }}</span>
+    <div>
+      <input [formControl]="controls.repeatedPassword" placeholder="Login" />
+    </div>
+    <span
+      *ngIf="
+        controls.repeatedPassword.invalid && controls.repeatedPassword.touched
+      "
+      >{{ getErrorMessage(controls.repeatedPassword) }}</span
+    >
+    <div>
+      <button [disabled]="registerForm.invalid">Submit</button>
+    </div>
+  </form>
+</section>

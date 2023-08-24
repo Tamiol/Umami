@@ -1,0 +1,23 @@
+<section>
+  <form [formGroup]="loginForm">
+    <div>
+      <input [formControl]="controls.login" placeholder="Login" />
+    </div>
+    <span *ngIf="controls.login.invalid && controls.login.touched">{{
+      getErrorMessage(controls.login)
+    }}</span>
+    <div>
+      <input
+        type="password"
+        [formControl]="controls.password"
+        placeholder="Password"
+      />
+    </div>
+    <span *ngIf="controls.password.invalid && controls.password.touched">{{
+      getErrorMessage(controls.password)
+    }}</span>
+    <div>
+      <button [disabled]="loginForm.invalid">Submit</button>
+    </div>
+  </form>
+</section>

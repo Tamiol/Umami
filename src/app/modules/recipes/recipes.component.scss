@@ -1,3 +1,14 @@
+.search_recipes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding-top: 200px;
+
+  app-search-bar {
+    margin-right: 20px;
+  }
+}
+
 .recipes_list {
   display: flex;
   flex-wrap: wrap;
@@ -8,15 +19,5 @@
 
   app-recipe-card {
     display: flex;
-  }
-}
-
-.search_recipes {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-
-  app-search-bar {
-    margin-right: 20px;
   }
 }
