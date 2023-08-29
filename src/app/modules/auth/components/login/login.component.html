@@ -1,5 +1,5 @@
 <section>
-  <form [formGroup]="loginForm">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
     <div>
       <input [formControl]="controls.login" placeholder="Login" />
     </div>
@@ -20,4 +20,7 @@
       <button [disabled]="loginForm.invalid">Submit</button>
     </div>
   </form>
+  <div>
+    <a routerLink="../register">Register</a>
+  </div>
 </section>

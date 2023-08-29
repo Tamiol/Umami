@@ -1,5 +1,5 @@
 <section>
-  <form [formGroup]="registerForm">
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
     <div>
       <input [formControl]="controls.login" placeholder="Login" />
     </div>
@@ -7,7 +7,7 @@
       getErrorMessage(controls.login)
     }}</span>
     <div>
-      <input [formControl]="controls.email" placeholder="Login" />
+      <input [formControl]="controls.email" placeholder="Email" />
     </div>
     <span *ngIf="controls.email.invalid && controls.email.touched">{{
       getErrorMessage(controls.email)
@@ -23,7 +23,11 @@
       getErrorMessage(controls.password)
     }}</span>
     <div>
-      <input [formControl]="controls.repeatedPassword" placeholder="Login" />
+      <input
+        type="password"
+        [formControl]="controls.repeatedPassword"
+        placeholder="Login"
+      />
     </div>
     <span
       *ngIf="
