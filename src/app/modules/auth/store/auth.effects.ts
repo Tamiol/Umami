@@ -18,7 +18,10 @@ export class AuthEffects {
       ofType(AuthActions.login),
       switchMap((action) => {
         return this.authService.login(action.loginData).pipe(
-          map((user) => AuthActions.loginSuccess({ user: { ...user } })),
+          map((user) => {
+            this.router.navigate(['/recipes']);
+            return AuthActions.loginSuccess({ user: { ...user } });
+          }),
           catchError((err) =>
             of(AuthActions.loginFailure({ error: 'Login failed' }))
           )
@@ -37,7 +40,7 @@ export class AuthEffects {
             return AuthActions.registerSuccess();
           }),
           catchError((err) =>
-            of(AuthActions.registerFailure({ error: 'Login failed' }))
+            of(AuthActions.registerFailure({ error: 'Register failed' }))
           )
         );
       })

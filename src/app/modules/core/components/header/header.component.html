@@ -6,9 +6,12 @@
   </a>
 
   <div>
-    <app-search-bar></app-search-bar>
+    <!-- <app-search-bar></app-search-bar> -->
     <a routerLink="login">
       <img src="assets/images/header/login.png" alt="log in" class="login" />
     </a>
+    <ng-container *ngIf="user$ | async">
+      <button>Logout</button>
+    </ng-container>
   </div>
 </header>
