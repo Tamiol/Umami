@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Recipe } from '../../shared/interfaces/recipes-interface';
+import { PostRecipe, Recipe } from '../../shared/interfaces/recipes-interface';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
@@ -24,5 +24,11 @@ export class RecipesApiService {
     return this.http.get<Recipe[]>(
       `${this.apiServerUrl}/catalog?name=${recipeName}`
     );
+  }
+
+  postRecipe(recipe: PostRecipe): Observable<Object> {
+    return this.http.post(`${this.apiServerUrl}/catalog`, recipe, {
+      withCredentials: true,
+    });
   }
 }

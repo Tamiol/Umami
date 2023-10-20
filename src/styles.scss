@@ -16,10 +16,15 @@ img {
 }
 
 app-root {
-  max-width: 1440px;
   margin: auto;
   display: flex;
   flex-direction: column;
+}
+
+app-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .container {

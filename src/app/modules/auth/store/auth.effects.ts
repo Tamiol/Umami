@@ -46,4 +46,19 @@ export class AuthEffects {
       })
     )
   );
+
+  logout$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(AuthActions.logout),
+      switchMap(() => {
+        return this.authService.logout().pipe(
+          map(() => {
+            this.router.navigate(['/recipes']);
+            return AuthActions.logoutSuccess();
+          }),
+          catchError((err) => of(AuthActions.logoutFailure()))
+        );
+      })
+    )
+  );
 }

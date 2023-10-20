@@ -1,26 +1,33 @@
 <section>
-  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <div class="main">
+    <h1>Login</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="field">
+        <input
+          type="text"
+          [formControl]="controls.login"
+          placeholder="Username"
+        />
+      </div>
+      <span *ngIf="controls.login.invalid && controls.login.touched">{{
+        getErrorMessage(controls.login)
+      }}</span>
+      <div class="field">
+        <input
+          type="password"
+          [formControl]="controls.password"
+          placeholder="Password"
+        />
+      </div>
+      <span *ngIf="controls.password.invalid && controls.password.touched">{{
+        getErrorMessage(controls.password)
+      }}</span>
+      <div class="button-submit">
+        <button [disabled]="loginForm.invalid">Submit</button>
+      </div>
+    </form>
     <div>
-      <input [formControl]="controls.login" placeholder="Login" />
+      <a routerLink="../register">Register</a>
     </div>
-    <span *ngIf="controls.login.invalid && controls.login.touched">{{
-      getErrorMessage(controls.login)
-    }}</span>
-    <div>
-      <input
-        type="password"
-        [formControl]="controls.password"
-        placeholder="Password"
-      />
-    </div>
-    <span *ngIf="controls.password.invalid && controls.password.touched">{{
-      getErrorMessage(controls.password)
-    }}</span>
-    <div>
-      <button [disabled]="loginForm.invalid">Submit</button>
-    </div>
-  </form>
-  <div>
-    <a routerLink="../register">Register</a>
   </div>
 </section>

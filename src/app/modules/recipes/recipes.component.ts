@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipesApiService } from '../core/services/recipes-api.service';
 import { Recipe } from '../shared/interfaces/recipes-interface';
+import { AppState } from 'src/app/store/app.reducer';
+import { User } from '../core/models/auth.model';
+import { Observable } from 'rxjs';
+import { selectAuthUser } from '../auth/store/auth.selectors';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-recipes',
@@ -8,7 +13,12 @@ import { Recipe } from '../shared/interfaces/recipes-interface';
   styleUrls: ['./recipes.component.scss'],
 })
 export class RecipesComponent implements OnInit {
-  constructor(private apiService: RecipesApiService) {}
+  constructor(
+    private apiService: RecipesApiService,
+    private store: Store<AppState>
+  ) {}
+
+  user$: Observable<User | null> = this.store.select(selectAuthUser);
 
   recipes: Recipe[] = [];
 

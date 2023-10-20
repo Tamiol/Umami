@@ -1,0 +1,44 @@
+<section>
+  <h1>Add Recipe</h1>
+
+  <form [formGroup]="recipeForm" (ngSubmit)="submit()">
+    <div>
+      <input [formControl]="controls.name" placeholder="Name" />
+    </div>
+    <!-- add new ingredient -->
+    <div>
+      <input
+        [formControl]="controls.readyInMinutes"
+        placeholder="Ready in minutes"
+      />
+    </div>
+    <div>
+      <input [formControl]="controls.instructions" placeholder="Instructions" />
+    </div>
+    <div>
+      <label
+        ><input
+          [formControl]="controls.vegetarian"
+          type="radio"
+        />Vegetarian</label
+      >
+    </div>
+    <div>
+      <label><input [formControl]="controls.vegan" type="radio" />Vegan</label>
+    </div>
+    <div>
+      <label
+        ><input
+          [formControl]="controls.glutenFree"
+          type="radio"
+        />GlutenFree</label
+      >
+    </div>
+    <div>
+      <input [formControl]="controls.imageUrl" placeholder="Image URL" />
+    </div>
+    <div>
+      <button [disabled]="recipeForm.invalid">Submit</button>
+    </div>
+  </form>
+</section>

@@ -17,9 +17,9 @@ export class HeaderComponent {
 
   constructor(private store: Store<AppState>) {}
 
-  // logout() {
-  //   this.store.dispatch(AuthActions.logout())
-  // }
+  logout() {
+    this.store.dispatch(AuthActions.logout());
+  }
 
   // homePgae!: boolean;
   // $currentUrl!: Subscription;

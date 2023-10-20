@@ -1,8 +1,14 @@
-<section class="search_recipes container">
-  <app-search-bar (searchRecipe)="searchRecipe($event)"></app-search-bar>
-  <button>Add</button>
-</section>
 <section class="container">
+  <div class="search_recipes">
+    <ng-container *ngIf="user$ | async">
+      <a routerLink="../recipe-add">
+        <button class="button--green">+</button>
+      </a>
+    </ng-container>
+    <app-search-bar (searchRecipe)="searchRecipe($event)"></app-search-bar>
+    <button class="button--pink">Filter</button>
+  </div>
+
   <ul class="recipes_list" *ngIf="recipes.length > 0; else noRecipe">
     <ng-container *ngFor="let recipe of recipes">
       <app-recipe-card [recipe]="recipe"></app-recipe-card>

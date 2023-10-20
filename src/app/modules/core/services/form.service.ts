@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { LoginForm, RegisterForm } from '../models/forms.model';
+import { LoginForm, RecipeForm, RegisterForm } from '../models/forms.model';
 import { equivalentValidator } from '../../shared/validators/equivalent.validator';
 
 @Injectable({
@@ -81,5 +81,35 @@ export class FormService {
       },
       { validators: [equivalentValidator('password', 'repeatedPassword')] }
     );
+  }
+
+  initRecipeForm(): FormGroup<RecipeForm> {
+    return new FormGroup({
+      name: new FormControl('', {
+        validators: [Validators.required],
+        nonNullable: true,
+      }),
+      readyInMinutes: new FormControl('', {
+        validators: [Validators.required],
+        nonNullable: true,
+      }),
+      instructions: new FormControl('', {
+        validators: [Validators.required],
+        nonNullable: true,
+      }),
+      vegetarian: new FormControl(false, {
+        nonNullable: true,
+      }),
+      vegan: new FormControl(false, {
+        nonNullable: true,
+      }),
+      glutenFree: new FormControl(false, {
+        nonNullable: true,
+      }),
+      imageUrl: new FormControl('', {
+        validators: [Validators.required],
+        nonNullable: true,
+      }),
+    });
   }
 }

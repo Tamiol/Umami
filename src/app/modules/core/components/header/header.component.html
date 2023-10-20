@@ -7,11 +7,13 @@
 
   <div>
     <!-- <app-search-bar></app-search-bar> -->
+    <!-- <ng-container *ngIf="user$ | async; else noUser"> -->
+    <button class="button_logout" (click)="logout()">Logout</button>
+    <!-- </ng-container>
+    <ng-template #noUser> -->
     <a routerLink="login">
       <img src="assets/images/header/login.png" alt="log in" class="login" />
     </a>
-    <ng-container *ngIf="user$ | async">
-      <button>Logout</button>
-    </ng-container>
+    <!-- </ng-template> -->
   </div>
 </header>

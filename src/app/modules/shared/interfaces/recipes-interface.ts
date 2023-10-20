@@ -12,3 +12,14 @@ export interface Recipe {
   glutenFree: boolean;
   imageUrl: string;
 }
+
+export interface PostRecipe {
+  name: string;
+  // ingredients: Ingredient[];
+  readyInMinutes: string;
+  instructions: string;
+  vegetarian: boolean;
+  vegan: boolean;
+  glutenFree: boolean;
+  imageUrl: string;
+}

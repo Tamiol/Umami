@@ -30,6 +30,17 @@ const _authReducer = createReducer(
     loading: false,
     error: null,
   })),
+  on(AuthActions.logout, (state, action) => ({
+    ...state,
+  })),
+  on(AuthActions.logoutSuccess, (state, action) => ({
+    ...state,
+    user: null,
+    error: null,
+  })),
+  on(AuthActions.loginFailure, (state, action) => ({
+    ...state,
+  })),
   on(AuthActions.register, (state, action) => ({
     ...state,
     loading: true,
