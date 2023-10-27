@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://test.pl',
+  apiUrl: 'https://asian-food-app.onrender.com/',
 };
