@@ -1,19 +1,20 @@
 <header>
   <a routerLink="" class="logo">
     <img src="assets/images/header/fan_logo.png" alt="Umami" />
-    <!-- <img src="assets/images/header/logo.png" alt="" />
-    <h1>Umami</h1> -->
   </a>
 
   <div>
     <!-- <app-search-bar></app-search-bar> -->
-    <!-- <ng-container *ngIf="user$ | async; else noUser"> -->
-    <button class="button_logout" (click)="logout()">Logout</button>
-    <!-- </ng-container>
-    <ng-template #noUser> -->
-    <a routerLink="login">
-      <img src="assets/images/header/login.png" alt="log in" class="login" />
-    </a>
-    <!-- </ng-template> -->
+
+    <ng-container *ngIf="user$ | async; else noUser">
+      <a routerLink="user-profile">
+        <img src="assets/images/header/login.png" alt="log in" class="login" />
+      </a>
+    </ng-container>
+    <ng-template #noUser>
+      <a routerLink="login">
+        <img src="assets/images/header/login.png" alt="log in" class="login" />
+      </a>
+    </ng-template>
   </div>
 </header>

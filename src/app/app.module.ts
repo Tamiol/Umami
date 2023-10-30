@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { authReducer } from './modules/auth/store/auth.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffects } from './modules/auth/store/auth.effects';
+import { UserProfileModule } from './modules/user-profile/user-profile.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { AuthEffects } from './modules/auth/store/auth.effects';
     CoreModule,
     HomeModule,
     AuthModule,
+    UserProfileModule,
     RecipesModule,
     AppRoutingModule,
     HttpClientModule,

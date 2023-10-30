@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { selectAuthUser } from 'src/app/modules/auth/store/auth.selectors';
 import { User } from '../../models/auth.model';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/app.reducer';
-import { selectAuthUser } from 'src/app/modules/auth/store/auth.selectors';
-import * as AuthActions from 'src/app/modules/auth/store/auth.actions';
 
 @Component({
   selector: 'app-header',
@@ -16,10 +15,6 @@ export class HeaderComponent {
   user$: Observable<User | null> = this.store.select(selectAuthUser);
 
   constructor(private store: Store<AppState>) {}
-
-  logout() {
-    this.store.dispatch(AuthActions.logout());
-  }
 
   // homePgae!: boolean;
   // $currentUrl!: Subscription;
