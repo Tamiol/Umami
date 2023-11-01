@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RecipesComponent } from './recipes.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { RecipeAddFormComponent } from './recipe-add-form/recipe-add-form.component';
+import { authActivateGuard } from '../core/guards/auth-activate.guard';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
   {
     path: 'recipe-add',
     component: RecipeAddFormComponent,
+    canActivate: [authActivateGuard],
   },
 ];
 
