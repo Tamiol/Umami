@@ -32,4 +32,10 @@ export class AuthService {
   register(body: RegisterData): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/register`, body);
   }
+
+  autoLogin(): Observable<IUser> {
+    return this.http.get<IUser>(`${this.apiUrl}/auto-login`, {
+      withCredentials: true,
+    });
+  }
 }

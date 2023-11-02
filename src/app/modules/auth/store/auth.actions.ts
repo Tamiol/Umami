@@ -13,6 +13,10 @@ const REGISTER_TYPE = '[Auth] Register';
 const REGISTER_SUCCESS_TYPE = '[Auth] Register Success';
 const REGISTER_FAILURE_TYPE = '[Auth] Register Failure';
 
+const AUTOLOGIN_TYPE = '[Auth] Auto Login';
+const AUTOLOGIN_SUCCESS_TYPE = '[Auth] Auto Login Success';
+const AUTOLOGIN_FAILURE_TYPE = '[Auth] Auto Login Failure';
+
 const CLEAR_ERROR_TYPE = '[Auth] Clear Error';
 
 export const login = createAction(
@@ -47,5 +51,14 @@ export const registerFailure = createAction(
   REGISTER_FAILURE_TYPE,
   props<{ error: string }>()
 );
+
+export const autoLogin = createAction(AUTOLOGIN_TYPE);
+
+export const autoLoginSuccess = createAction(
+  AUTOLOGIN_SUCCESS_TYPE,
+  props<{ user: IUser }>()
+);
+
+export const autoLoginFailure = createAction(AUTOLOGIN_FAILURE_TYPE);
 
 export const clearError = createAction(CLEAR_ERROR_TYPE);
